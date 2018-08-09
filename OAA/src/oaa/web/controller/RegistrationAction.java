@@ -32,6 +32,7 @@ public class RegistrationAction extends Action {
 
 			} catch (SQLException e) {
 				e.printStackTrace();
+			//	System.out.println("Error");
 				return mapping.findForward(FAILURE);
 			}
 			if (status == true) {
