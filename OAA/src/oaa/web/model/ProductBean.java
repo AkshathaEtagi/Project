@@ -1,13 +1,14 @@
+
 package oaa.web.model;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 
 import javax.naming.Context;
@@ -91,8 +92,10 @@ public class ProductBean extends ActionForm {
 
 			fileData = image.getFileData();
 			fileBA = new ByteArrayInputStream(fileData);
-
-			ps = connection.prepareStatement("insert into product values(22,?,?,?,?,?,'E',?,?)");
+			
+			
+			
+			ps = connection.prepareStatement("insert into product values(product_id.NEXTVAL,?,?,?,?,?,'E',?,?)");
 
 			ps.setString(1, getProductName());
 
@@ -102,10 +105,9 @@ public class ProductBean extends ActionForm {
 			ps.setString(4, getDescription());
 			ps.setInt(5, getMinBidPrice());
 			ps.setBinaryStream(6, fileBA);
-			
-			  Date sqlDate = new Date(new java.util.Date().getTime());
-			  ps.setDate(7, sqlDate);
-			 
+
+			Date sqlDate = new Date(new java.util.Date().getTime());
+			ps.setDate(7, sqlDate);
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
@@ -154,7 +156,7 @@ public class ProductBean extends ActionForm {
 			fileBA = new ByteArrayInputStream(fileData);
 
 			ps = connection.prepareStatement(
-					"UPDATE product SET min_bid_price=?, category_id=?,description=?,photo=?,Date=now()  WHERE product_id=?  and user_id=?");
+					"UPDATE product SET min_bid_price=?, category_id=?,description=?,photo=?  WHERE product_id=?  and user_id=?");
 
 			ps.setInt(1, getMinBidPrice());
 			ps.setString(2, getCategory());
@@ -162,7 +164,7 @@ public class ProductBean extends ActionForm {
 			ps.setBinaryStream(4, fileBA);
 			ps.setString(5, getProductName());
 			ps.setInt(6, user_id);
-
+			System.out.println(ps);
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
 
@@ -240,7 +242,7 @@ public class ProductBean extends ActionForm {
 		try {
 
 			Product product = null;
-			String sql = "SELECT product_id,product_name,category_id,description,min_bid_price,photo,Date FROM product where user_id=? and status=?";
+			String sql = "SELECT product_id,product_name,category_id,description,min_bid_price,photo,product_date FROM product where user_id=? and status=?";
 
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setInt(1, user_id);
