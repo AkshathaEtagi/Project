@@ -14,11 +14,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/common logging"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/spring"/>
-<<<<<<< HEAD
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/jdbc"/>
-=======
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jdbc"/>
 	<classpathentry kind="lib" path="C:/Softwares/ojdbc6.jar"/>
->>>>>>> branch 'master' of https://github.com/AkshathaEtagi/Project.git
 	<classpathentry kind="output" path="bin"/>
 </classpath>
