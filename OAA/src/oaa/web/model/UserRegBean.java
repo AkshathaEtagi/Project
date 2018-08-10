@@ -161,7 +161,7 @@ public class UserRegBean extends ActionForm {
 
 		try {
 		
-			ps = connection.prepareStatement("insert into users values(8,?,?,?,?,?,?,'E',?,?,?,?)");
+			ps = connection.prepareStatement("insert into users values(25,?,?,?,?,?,?,'E',?,?,?,?)");
 
 			ps.setString(1, getEmail_id());
 			ps.setString(2, getFirstname());
