@@ -6,7 +6,7 @@
             type="javax.sql.DataSource"
             username="TA"
             password="ta#5"
-            driverClassName="org.hsql.jdbcDriver.OracleDriver"
+            driverClassName="oracle.jdbc.driver.OracleDriver"
             url="jdbc:oracle:thin:@desktop-m03s522:1522:teamdb"
             maxTotal="8"
             maxIdle="4"/>

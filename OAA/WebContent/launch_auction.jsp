@@ -32,9 +32,9 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">Product Name</label> <select
-													class="form-control" id="productName" name="productName">
-													<c:forEach items="${sessionScope.productList}"
+												<label for="product_name">Product Name</label> <input
+													class="form-control" id="productName" name="productName"/>
+												<c:forEach items="${sessionScope.productList}"
 														var="product">
 														<option value="${product.productId}">${product.productName}</option>
 													</c:forEach>
@@ -65,7 +65,7 @@
 													java.util.Date end_date = calendar.getTime();
 													java.text.DateFormat df = new java.text.SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 												%><input class="form-control" id="datepicker" type="text"
-													value="<%=df.format(start_date)%>" name="startDate" required>
+													value="<%=df.format(start_date)%>" name="startDate" >
 											</div>
 
 										</div>
@@ -74,7 +74,7 @@
 											<div class="form-group">
 												<label for="end date">End Date</label> <input type="text"
 													class="form-control" id="datepicker" name="endDate"
-													value="<%=df.format(end_date)%>" required>
+													value="<%=df.format(end_date)%>" >
 
 											</div>
 										</div>

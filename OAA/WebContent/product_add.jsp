@@ -65,7 +65,7 @@
 												<label for="category">Category</label>
 												<html:select styleClass="form-control" styleId="category"
 													property="category" >
-													<c:forEach items="${sessionScope.CB.categories}"
+												  <c:forEach items="${sessionScope.CB.categories}"
 														var="category">
 														<html:option value="${category.categoryId}">${category.categoryName}</html:option>
 													</c:forEach>
